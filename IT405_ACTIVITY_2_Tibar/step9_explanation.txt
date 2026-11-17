@@ -1,0 +1,52 @@
+STEP 9 – INCOMPLETE VARIABLE LIST EXPLANATION
+
+In Step 9, I tested what happens when the variable list is incomplete. First, I used the expressions `('and', 'p', 'q')` and `('and', 'p', 'q')` with only `['p']` as the variable list.
+
+Test command:
+
+`equivalent(('and', 'p', 'q'), ('and', 'p', 'q'), ['p'])`
+
+Actual error message:
+
+KeyError: 'q'
+
+
+Explanation:
+
+The error occurred because the expressions use two variables, p and q, but the variable list only contains p. When the program tried to evaluate q, Python could not find its assigned value.
+
+Correction:
+
+I included both variables in the variable list:
+
+`equivalent(('and', 'p', 'q'), ('and', 'p', 'q'), ['p', 'q'])`
+
+The program successfully returned:
+
+`True`
+
+This means the two expressions are logically equivalent when all required variables are included.
+
+
+ADDITIONAL REMINDERS AND OBSERVATIONS
+
+1. Truth Table Rows
+
+A truth table has 2^n rows, where n represents the number of variables. As the number of variables increases, the number of rows also increases quickly. Therefore, I should avoid testing more than approximately ten variables.
+
+2. Step 9 – Incomplete Variable List
+
+Step 9 is designed to test whether the variable list includes all variables used in the expressions. The test showed that missing variables can cause a `KeyError`. Including all required variables allows the program to evaluate the expressions correctly.
+
+3. Recording Errors
+
+If an error occurs during testing, the exact error message should be recorded and explained. Errors help identify problems in the program and demonstrate what happened during testing.
+
+In my Step 9 test, the error was `KeyError: 'q'`.
+
+4. How I Would Fix the equivalent() Function
+
+To make the `equivalent()` function more trustworthy, I would add a validation step before evaluating the expressions. The function should check whether all variables used in both expressions are included in the given variable list. If a variable is missing, the function should display a clear error message instead of continuing the evaluation. This prevents incomplete variable lists from producing unreliable results.
+
+Another possible improvement is to automatically identify all variables used in both expressions and generate the complete list of variable assignments.
+This makes the equivalence test more reliable because every required variable is considered when generating the truth table.

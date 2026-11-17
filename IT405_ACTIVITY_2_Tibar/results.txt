@@ -1,0 +1,81 @@
+IT 405L - ACTIVITY 2
+TRUTH TABLE RESULTS
+
+STEP 4 - TAUTOLOGY
+
+Expression: p OR NOT p
+
+p       Result
+True    True
+False   True
+
+Explanation:
+This expression is a tautology because the result is always True for every possible value of p.
+
+STEP 4 - CONTRADICTION
+
+Expression: p AND NOT p
+
+p       Result
+True    False
+False   False
+
+Explanation:
+This expression is a contradiction because the result is always False for every possible value of p.
+
+
+STEP 6 - DE MORGAN'S LAW
+
+First Expression: NOT (p AND q)
+
+p       q       Result
+True    True    False
+True    False   True
+False   True    True
+False   False   True
+
+Second Expression: (NOT p) OR (NOT q)
+
+p       q       Result
+True    True    False
+True    False   True
+False   True    True
+False   False   True
+
+Explanation:
+Both expressions produce identical results for all possible combinations of p and q. Therefore, they are logically equivalent.
+
+
+STEP 7 - IMPLICATION EQUIVALENCE
+
+First Expression: p IMPLIES q
+
+p       q       Result
+True    True    True
+True    False   False
+False   True    True
+False   False   True
+
+Second Expression: (NOT p) OR q
+
+p       q       Result
+True    True    True
+True    False   False
+False   True    True
+False   False   True
+
+Explanation:
+Both expressions produce identical results for all possible combinations of p and q. Therefore, they are logically equivalent.
+
+STEP 8 - TESTING EQUIVALENCE
+
+E1: ((p AND q) IMPLIES r)
+
+E2: ((p IMPLIES r) AND (q IMPLIES r))
+
+Equivalence Result: False
+
+Witness: p=False, q=True, r=False
+
+Explanation:
+The two expressions are not logically equivalent because they produce different results for the assignment p=False, q=True, r=False. E1 evaluates to True, while E2 evaluates to False.
