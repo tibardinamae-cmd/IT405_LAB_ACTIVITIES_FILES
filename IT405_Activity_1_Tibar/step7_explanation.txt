@@ -1,0 +1,7 @@
+Step 7 failed because the expression contains 
+`1/0`, which causes a `ZeroDivisionError`. My evaluator 
+evaluates both operands before applying the logical operator,
+ so it still tries to compute `1/0`. Python's built-in `or` uses 
+ short-circuit evaluation, so when the left operand is `True`, 
+ it does not evaluate the right operand. This shows that my evaluator 
+ uses eager evaluation, while Python's logical operators use lazy (short-circuit) evaluation.
